@@ -43,6 +43,8 @@
     "dev:run": "npx nodemon build/server.js",
 		"typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
 		"start": "node build/server.js",
-		"dev:watch": "npx concurrently \"npm run build:watch\" \"npm run dev:run\""
+    "dev:watch": "npx concurrently \"npm run build:watch\" \"npm run dev:run\"",
+    "database:create": "npx pg-god db-create --databaseName=helpper -e -w docker",
+    "migrations": "npm run typeorm migration:run"
 	}
 }
